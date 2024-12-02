@@ -8,7 +8,7 @@ Created on Tue Jan  3 23:41:10 2023
 
 import time
 import git
-import config
+#import config
 
 # repo = git.Repo(config.MAIN_REPO_PATH)
 # repo.pull
@@ -44,18 +44,18 @@ data_url = "https://github.com/geiges/Renewable_share_forecast_Germany/raw/main/
 
 
 
-def ssh_update():
-    lcd.clear()
-    lcd.message('SSH update...')
-    lcd.set_cursor(0, 1)
-    try:
-        repo = git.Repo(config.MAIN_REPO_PATH)
-        repo.git.pull()
-        lcd.message('successful')
-        time.sleep(1)
-    except Exception:
-        lcd.message('failed')
-        time.sleep(5)
+# def ssh_update():
+#     lcd.clear()
+#     lcd.message('SSH update...')
+#     lcd.set_cursor(0, 1)
+#     try:
+#         repo = git.Repo(config.MAIN_REPO_PATH)
+#         repo.git.pull()
+#         lcd.message('successful')
+#         time.sleep(1)
+#     except Exception:
+#         lcd.message('failed')
+#         time.sleep(5)
 
 
 # create bar chars
@@ -181,7 +181,7 @@ if debug:
 else:
     import pandas as pd
 
-    ssh_update()
+    # ssh_update()
     old_now = pd.Timestamp('now', tz='CET').round('1h') - pd.Timedelta(hours=1)
     while 1:
         force_refresh = False
