@@ -8,32 +8,36 @@ Andreas Geiges
 ```
 git clone git@github.com:geiges/raspberry_LCD_ecowhen.git
 
-%create service file
-/etc/systemd/system/your-service.service
+%create service file (use template.service in this repo)
+cp template.service /etc/systemd/system/lcd_reshare.service 
 
 %Reload the service files to include the new service.
 sudo systemctl daemon-reload
 
 % Apply correct rights to startup file
-sudo chmod 744 lcd_startup.sh 
+sudo chmod 744 lcd_reshare.sh 
 
 %Start your service
-sudo systemctl start your-service.service
+sudo systemctl start lcd_reshare.service
 
 %To check the status of your service
-sudo systemctl status example.service
+sudo systemctl status lcd_reshare.service
 
 %To enable your service on every reboot
-sudo systemctl enable example.service
+sudo systemctl enable lcd_reshare.service
 
 %To disable your service on every reboot
-sudo systemctl disable example.service
+sudo systemctl disable lcd_reshare.service
 
 
 ```
 
 # Operation
 
+``` 
+% restart deamon    
 sudo systemctl restart lcd_reshare.service
-sudo systemctl status  lcd_reshare.service
 
+% check status of deamon
+sudo systemctl status  lcd_reshare.service
+```
