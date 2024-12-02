@@ -27,3 +27,9 @@ sudo systemctl enable example.service
 %To disable your service on every reboot
 sudo systemctl disable example.service
 ```
+
+# Operation
+
+sudo systemctl restart lcd_reshare.service
+sudo systemctl status  lcd_reshare.service
+
