@@ -1,0 +1,3 @@
+Adafruit_CharLCD
+pandas
+numpy

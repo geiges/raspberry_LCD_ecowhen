@@ -1,0 +1,10 @@
+[Unit]
+Description=LCD Renewable share agent
+After=multi-user.target
+  
+[Service]
+ExecStart=[folder-of-repository]/lcd_startup.sh                                   
+WorkingDirectory=/[folder-of-repository]
+User=[your user]  
+[Install]
+WantedBy=multi-user.target
