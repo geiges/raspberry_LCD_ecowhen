@@ -200,7 +200,7 @@ else:
             # update lcd
             df = pd.read_json(data_url).set_index('time')
             df.index = pd.DatetimeIndex(df.index, tz='CET')
-            df['RE_share'] = 100*(df['wind'] + df['solar'] + df['hydropower'] + df['biomass']) / df['demand']
+            df['RE_share'] = (df['wind'] + df['solar'] + df['hydropower'] + df['biomass']) / df['demand']
 
             lcd.clear()
             lcd.message(now.strftime('%H:%M'))
