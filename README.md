@@ -14,6 +14,8 @@ git clone git@github.com:geiges/raspberry_LCD_ecowhen.git
 %Reload the service files to include the new service.
 sudo systemctl daemon-reload
 
+% Apply correct rights to startup file
+sudo chmod 744 lcd_startup.sh 
 
 %Start your service
 sudo systemctl start your-service.service
@@ -26,6 +28,8 @@ sudo systemctl enable example.service
 
 %To disable your service on every reboot
 sudo systemctl disable example.service
+
+
 ```
 
 # Operation
