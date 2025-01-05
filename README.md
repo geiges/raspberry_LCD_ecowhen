@@ -20,9 +20,6 @@ sudo chmod 744 lcd_reshare.sh
 %Start your service
 sudo systemctl start lcd_reshare.service
 
-%To check the status of your service
-sudo systemctl status lcd_reshare.service
-
 %To enable your service on every reboot
 sudo systemctl enable lcd_reshare.service
 
@@ -31,7 +28,6 @@ sudo systemctl disable lcd_reshare.service
 
 
 ```
-
 # Operation
 
 ``` 
