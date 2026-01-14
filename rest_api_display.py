@@ -20,7 +20,7 @@ async def run():
     
 
     
-    @app.route('/set_temperature', methods=['POST'])
+    @app.route('/message', methods=['POST'])
     async def send_message():
      
         data_dict = json.loads(request.data)
