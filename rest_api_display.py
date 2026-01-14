@@ -24,18 +24,13 @@ async def run():
     async def send_message():
      
         data_dict = json.loads(request.data)
+        
         if 'message' in data_dict.keys():
             
-            with open('data/display_message.txt','w+') as fid:
+            with open('data/display_message.txt','w') as fid:
                 
                 fid.writelines(data_dict['message'])
-           
-           
-            
-            
-        # elif:
-            
-    
+
         return jsonify('Message sent'), 200
     
 
