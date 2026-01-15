@@ -30,8 +30,8 @@ async def run():
             with open(config.temp_file_display_message1,'w') as fid:
                 
                 fid.writelines(data_dict['message'])
-        return '',200
-        return jsonify('Message sent'), 200
+        return "", 200        
+        #return jsonify('Message sent'), 200
     
 
     app.run(host="0.0.0.0", port=5000)
