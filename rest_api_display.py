@@ -19,7 +19,9 @@ async def run():
     app = Flask(__name__)
     
     
-
+    @app.route('/alive', methods = ['GET'])
+    async def send_alive():
+        return 'yes',200
     
     @app.route('/message', methods=['POST'])
     async def send_message():

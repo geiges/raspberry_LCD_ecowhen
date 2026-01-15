@@ -4,6 +4,11 @@ while  :
 
 do
     git pull
+    
+    if (( $(curl http://localhost:5000/alive) != yes)); then
+        echo "Starting Rest api"
+        tmux new-session -d -s restapi "uv run rest_api_display.py"
+    
     echo "Starting LDC display service"
 
     timedatectl # get time 
