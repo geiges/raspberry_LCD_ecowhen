@@ -48,9 +48,9 @@ def show_display_message1(sleep_time=5):
         
         text = open(config.temp_file_display_message1,'r').readlines()[0]
         
-        assert len(text) < 7
+        assert len(text) < 6
         lcd.set_cursor(0, 0)
-        lcd.message(text)
+        lcd.message(text.ljust(5))
         time.sleep(sleep_time)
         
     else:
