@@ -18,6 +18,7 @@ async def run():
 
     app = Flask(__name__)
     
+    
 
     
     @app.route('/message', methods=['POST'])
@@ -29,7 +30,7 @@ async def run():
             
             with open(config.temp_file_display_message1,'w') as fid:
                 
-                fid.writelines(data_dict['message'])
+                fid.writelines(data_dict['display_1'])
         return "", 200        
         #return jsonify('Message sent'), 200
     
