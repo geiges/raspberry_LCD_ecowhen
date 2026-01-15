@@ -43,7 +43,7 @@ data_url = "https://github.com/geiges/Renewable_share_forecast_Germany/raw/main/
 # model_version = config.active_models['DEU']
 
 
-def show_display_message1(time=5):
+def show_display_message1(sleep_time=5):
     if os.path.exist(config.temp_file_display_message1):
         
         text = open(config.temp_file_display_message1,'r').readlines()[0]
@@ -51,17 +51,17 @@ def show_display_message1(time=5):
         assert len(text) < 7
         lcd.set_cursor(0, 0)
         lcd.message(text)
-        time.sleep(time)
+        time.sleep(sleep_time)
         
     else:
         show_clock()    
 
 
-def show_clock(time=5):
+def show_clock(sleep_time=5):
     
     lcd.set_cursor(0, 0)
     lcd.message(now.strftime('%H:%M'))
-    for i in range(time//2):
+    for i in range(sleep_time//2):
         lcd.set_cursor(2, 0)
         lcd.message(' ')
         time.sleep(1)
@@ -249,5 +249,5 @@ else:
 
         for i in range(3):
            
-            show_clock(time=6)
-            show_display_message1(time=4)
+            show_clock(sleep_time=6)
+            show_display_message1(sleep_time=4)
