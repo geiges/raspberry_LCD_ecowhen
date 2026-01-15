@@ -5,10 +5,10 @@ Created on Tue Jan  3 23:41:10 2023
 
 @author: Andreas Geiges
 """
-
+import os
 import time
-import git
-#import config
+#import git
+import config
 
 # repo = git.Repo(config.MAIN_REPO_PATH)
 # repo.pull
@@ -43,19 +43,32 @@ data_url = "https://github.com/geiges/Renewable_share_forecast_Germany/raw/main/
 # model_version = config.active_models['DEU']
 
 
+def show_display_message1(time=5):
+    if os.path.exist(config.temp_file_display_message1):
+        
+        text = open(config.temp_file_display_message1,'r').readlines()[0]
+        
+        assert len(text) < 7
+        lcd.set_cursor(0, 0)
+        lcd.message(text)
+        time.sleep(time)
+        
+    else:
+        show_clock()    
 
-# def ssh_update():
-#     lcd.clear()
-#     lcd.message('SSH update...')
-#     lcd.set_cursor(0, 1)
-#     try:
-#         repo = git.Repo(config.MAIN_REPO_PATH)
-#         repo.git.pull()
-#         lcd.message('successful')
-#         time.sleep(1)
-#     except Exception:
-#         lcd.message('failed')
-#         time.sleep(5)
+
+def show_clock(time=5):
+    
+    lcd.set_cursor(0, 0)
+    lcd.message(now.strftime('%H:%M'))
+    for i in range(time//2):
+        lcd.set_cursor(2, 0)
+        lcd.message(' ')
+        time.sleep(1)
+        lcd.set_cursor(2, 0)
+        lcd.message(':')
+        time.sleep(1)
+    
 
 
 # create bar chars
@@ -230,15 +243,11 @@ else:
             old_now = now_round
         else:
             print('Patiently waiting..')
-            lcd.set_cursor(0, 0)
-            lcd.message(now.strftime('%H:%M'))
+            
 
         # time.sleep(60)
 
-        for i in range(30):
-            lcd.set_cursor(2, 0)
-            lcd.message(' ')
-            time.sleep(1)
-            lcd.set_cursor(2, 0)
-            lcd.message(':')
-            time.sleep(1)
+        for i in range(3):
+           
+            show_clock(time=6)
+            show_display_message1(time=4)
