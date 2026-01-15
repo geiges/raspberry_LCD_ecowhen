@@ -30,7 +30,7 @@ async def run():
             with open('data/display_message.txt','w') as fid:
                 
                 fid.writelines(data_dict['message'])
-
+        return '',200
         return jsonify('Message sent'), 200
     
 
