@@ -42,7 +42,9 @@ data_url = "https://github.com/geiges/Renewable_share_forecast_Germany/raw/main/
 # from clean_power_forecast import config
 # model_version = config.active_models['DEU']
 
-
+if os.path.exists(config.temp_file_display_message1):
+    os.remove(config.temp_file_display_message1)
+    
 def show_display_message1(sleep_time=5):
     if os.path.exists(config.temp_file_display_message1):
         
