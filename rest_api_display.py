@@ -9,7 +9,7 @@ Created on Wed Jan 14 15:13:07 2026
 import json
 from flask import Flask, jsonify, request
 import asyncio
-
+import config
 
 async def run():
     
@@ -25,9 +25,9 @@ async def run():
      
         data_dict = json.loads(request.data)
         
-        if 'message' in data_dict.keys():
+        if 'display_1' in data_dict.keys():
             
-            with open('data/display_message.txt','w') as fid:
+            with open(config.temp_file_display_message1,'w') as fid:
                 
                 fid.writelines(data_dict['message'])
         return '',200
