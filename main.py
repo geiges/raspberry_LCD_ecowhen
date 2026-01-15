@@ -44,7 +44,7 @@ data_url = "https://github.com/geiges/Renewable_share_forecast_Germany/raw/main/
 
 
 def show_display_message1(sleep_time=5):
-    if os.path.exist(config.temp_file_display_message1):
+    if os.path.exists(config.temp_file_display_message1):
         
         text = open(config.temp_file_display_message1,'r').readlines()[0]
         
