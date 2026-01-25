@@ -13,7 +13,7 @@ import config
 
 async def run():
     
-   
+    print("starting flask api")
     
 
     app = Flask(__name__)
