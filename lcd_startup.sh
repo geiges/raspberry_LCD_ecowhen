@@ -5,7 +5,7 @@ while  :
 do
     git pull
     
-    if (( $(curl http://localhost:5000/alive) != yes)); then
+    if ! curl http://localhost:5000/alive; then
         echo "Starting Rest api"
         tmux new-session -d -s restapi "uv run rest_api_display.py"
     fi
