@@ -1,0 +1,10 @@
+[Unit]
+Description=LCD Update API
+After=multi-user.target
+  
+[Service]
+WorkingDirectory=/home/and/python/raspberry_LCD_ecowhen
+ExecStart=/home/and/python/raspberry_LCD_ecowhen/lcd_api.sh                                   
+User=and  
+[Install]
+WantedBy=multi-user.target

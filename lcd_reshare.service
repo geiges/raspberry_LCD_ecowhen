@@ -1,0 +1,10 @@
+[Unit]
+Description=LCD Renewable share 
+After=multi-user.target
+  
+[Service]
+WorkingDirectory=/home/and/python/raspberry_LCD_ecowhen
+ExecStart=/home/and/python/raspberry_LCD_ecowhen/lcd_startup.sh                                   
+User=and  
+[Install]
+WantedBy=multi-user.target
